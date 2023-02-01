@@ -7,7 +7,7 @@ const MealItem = (props) => {
   const cartCtx = useContext(CartContext)
   const price = `$${props.price.toFixed(2)}`;
 
-  addToCartHandler = (amount) => {
+  const addToCartHandler = amount => {
     cartCtx.addItem({
       id:props.id,
       name:props.name,
@@ -24,7 +24,7 @@ const MealItem = (props) => {
         <div className={classes.price}>{price}</div>
       </div>
       <div>
-        <MealItemForm onAddToCart={addToCartHandler} />
+        <MealItemForm onAddToCart ={addToCartHandler} />
       </div>
     </li>
   );
